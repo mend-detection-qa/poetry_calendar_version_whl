@@ -1,0 +1,22 @@
+{
+  "_comment": "Expected dependency tree for poetry_calendar_version_whl — regression for SCA-5540. pdfminer.six 20251230 is a calendar-versioned package (no dots in version segment). After the fix, it must appear as a fully-populated transitive dependency under pdfplumber.",
+  "version": "1.0",
+  "packageManager": "poetry",
+  "directDependencies": [
+    {
+      "name": "pdfplumber",
+      "version": "0.11.4",
+      "transitiveDependencies": [
+        {
+          "name": "pdfminer-six",
+          "version": "20251230",
+          "_note": "Calendar version — the regression target. Must have sha1/systemPath/filename/dependencyFile populated after SCA-5540 fix."
+        },
+        {
+          "name": "pillow",
+          "version": "11.2.1"
+        }
+      ]
+    }
+  ]
+}
