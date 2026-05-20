@@ -21,6 +21,7 @@
       "check_dependency_tree_detection_status": true,
       "check_update_request_sca_results": true,
 
+      "check_system_paths": true,
       "expected_total_dependencies_number": {"gte": 3},
       "expected_direct_dependencies_number": {"eq": 1},
       "_comment_direct": "Only pdfplumber is declared as a direct dependency in pyproject.toml.",
