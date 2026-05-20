@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "poetry-calendar-version-whl"
+version = "0.1.0"
+description = "Regression test for SCA-5540: Poetry resolver must correctly handle packages whose wheel filename contains a calendar version (e.g. pdfminer.six-20251230) — versionPatternWhl must match non-dotted version segments"
+authors = ["mend-detection-qa <detection-qa@mend.io>"]
+readme = "README.md"
+packages = [{include = "poetry_calendar_version_whl"}]
+
+[tool.poetry.dependencies]
+# pdfplumber transitively pulls pdfminer.six==20251230 — the canonical
+# reproduction case from SCA-5540.  The calendar version (YYYYMMDD) has
+# NO dots, so the old versionPatternWhl regex rejected the .whl filename
+# causing missing sha1 / systemPath / filename / dependencyFile.
+python = "^3.11"
+pdfplumber = "^0.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
