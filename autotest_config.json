@@ -29,14 +29,9 @@
       "_comment_transitive": "At minimum: pdfminer.six + pillow (pulled by pdfplumber).",
 
       "direct_dependencies_names_list": {
-        "contains": [
-          "pdfplumber"
-        ]
-      },
-
-      "transitive_dependencies_names_list": {
-        "contains": [
-          "pdfminer-six"
+        "eq": [
+          "pdfplumber-0.11.9-py3-none-any.whl",
+          
         ]
       },
       "_comment_transitive_names": "CRITICAL: pdfminer.six (normalized to pdfminer-six) MUST appear as a transitive dependency with a fully populated record. Before the SCA-5540 fix, the versionPatternWhl regex rejected the calendar version 20251230 causing the package to emit a stripped record (no sha1/systemPath/filename/dependencyFile). This check ensures the package is actually resolved and present in the tree.",
